@@ -19,7 +19,7 @@ let appData = {
   optionalExpenses: {},
   income: [],
   savings: true,
-  chooseExpenses: function() {
+  chooseExpenses: function () {
     for (let i = 0; i < 2; i++) {
       let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
         b = prompt("Во сколько обойдется?", "");
@@ -41,11 +41,11 @@ let appData = {
       }
     }
   },
-  detectDayBudget: function() {
+  detectDayBudget: function () {
     appData.moneyPerDay = (appData.budget / 30).toFixed();
     alert("Бюджет на 1 день составляет " + appData.moneyPerDay + "руб.");
   },
-  detectLevel: function() {
+  detectLevel: function () {
     if (appData.moneyPerDay < 100) {
       console.log("Это минимальный уровень достатка!");
     } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
@@ -56,7 +56,7 @@ let appData = {
       console.log("Ошибочка...!");
     }
   },
-  checkSavings: function() {
+  checkSavings: function () {
     if (appData.savings == true) {
       let save = +prompt("Какова сумма накоплений?"),
         percent = +prompt("Под какой процент?");
@@ -65,14 +65,14 @@ let appData = {
       alert("Доход с Вашего депозита в месяц: " + appData.monthIncome);
     }
   },
-  chooseOptExpenses: function() {
+  chooseOptExpenses: function () {
     for (let i = 1; i <= 3; i++) {
       let questionOptExpenses = prompt("Статья необязательных расходов?");
       appData.optionalExpenses[i] = questionOptExpenses;
       console.log(appData.optionalExpenses);
     }
   },
-  chooseIncome: function() {
+  chooseIncome: function () {
     let items = prompt(
       "Что принесет дополнительный доход? (Перечислите через запятую)",
       ""
@@ -86,7 +86,7 @@ let appData = {
       appData.income.sort();
     }
 
-    appData.income.forEach(function(itemmassive, i) {
+    appData.income.forEach(function (itemmassive, i) {
       alert("Способы доп. заработка: " + (i + 1) + " - " + itemmassive);
     });
   }
